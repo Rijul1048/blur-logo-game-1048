@@ -1,4 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Mono:wght@400;700&display=swap');
 @import "tailwindcss";
+
+:root {
+  --neon-cyan: #00f2ff;
+  --neon-pink: #ff00ea;
+  --dark-bg: #030303;
+  --card-bg: rgba(20, 20, 20, 0.6);
+}
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -10,9 +18,48 @@ html, body {
   height: 100%;
   width: 100%;
   overflow: hidden;
-  background: #000;
+  background-color: var(--dark-bg);
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(0, 242, 255, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 100% 100%, rgba(255, 0, 234, 0.05) 0%, transparent 50%);
   color: #fff;
-  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Utilities for Neon Theme */
+.text-neon-cyan {
+  color: var(--neon-cyan);
+  text-shadow: 0 0 10px rgba(0, 242, 255, 0.5), 0 0 20px rgba(0, 242, 255, 0.2);
+}
+
+.text-neon-pink {
+  color: var(--neon-pink);
+  text-shadow: 0 0 10px rgba(255, 0, 234, 0.5), 0 0 20px rgba(255, 0, 234, 0.2);
+}
+
+.border-neon-cyan {
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 15px rgba(0, 242, 255, 0.3);
+}
+
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.font-mono-custom {
+  font-family: 'Space Mono', monospace;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.8; filter: drop-shadow(0 0 5px var(--neon-cyan)); }
+  50% { opacity: 1; filter: drop-shadow(0 0 15px var(--neon-cyan)); }
+}
+
+.animate-pulse-cyan {
+  animation: pulse-glow 2s infinite ease-in-out;
 }
 
 #__next, main {

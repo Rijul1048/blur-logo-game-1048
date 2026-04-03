@@ -15,12 +15,13 @@ interface GameImage {
 // ─── Configuration — edit this to swap images ─────────────────────────────────
 
 const IMAGE_PATHS = [
+  "/logos/kali-linux.png",
+  "/logos/antigravity.png",
   "/logos/cloudflare3.png",
-  "/logos/openAI.png",
   "/logos/figma.png",
   "/logos/discord3.png",
   "/logos/postman3.png",
-  "/logos/stackoverflow.png"
+  "/logos/stackoverflow.png",
 
 ];
 
